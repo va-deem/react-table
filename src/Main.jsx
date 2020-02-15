@@ -34,8 +34,8 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    // fetch('http://www.filltext.com/?rows=1000&id={number|1000}&firstName={firstName}&delay=3&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}')
-    fetch('http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}')
+    const url = 'http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}';
+    fetch(`https://cors-anywhere.herokuapp.com/${url}`)
       .then((res) => res.json())
       .then((dataSource) => this.setState({ dataSource, isLoading: false }))
       .catch((error) => {
